@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地球守衛隊 Earth guardian | 微想實驗室 Thinkabit Lab</title>
+    
+    <!-- Google 字型與樣式 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-landing-page">
+
+    <!-- 頂部導覽列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">THINKABIT LAB</a>
+        </div>
+    </nav>
+
+    <!-- 專案 Hero 區塊 -->
+    <header class="project-hero">
+        <div class="container">
+            <!-- 1. 封面 大圖 -->
+            <div class="main-cover" style="margin-bottom: 60px;">
+                <img src="images/封面圖.png" alt="地球守衛隊 封面圖">
+            </div>
+
+            <!-- 2. 標籤與標題資訊 -->
+            <span class="project-tag">自然科桌遊AR</span>
+            <h1 class="project-title">地球守衛隊</h1>
+            <p class="project-subtitle">Earth guardian</p>
+        </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="project-content">
+        <div class="container">
+
+            <!-- 0. 專案宣傳影片區塊 -->
+            <section class="content-section">
+                <h2 class="section-title">專案宣傳影片</h2>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/p6AGtDSpuqY" 
+                        title="地球守衛隊 專案宣傳影片" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+            
+            <!-- 1. 專案簡介 -->
+            <section class="content-section">
+                <h2 class="section-title">專案簡介</h2>
+                <p class="description-text">
+                    本計畫針對國小中高年級自然科學實驗單元設計一套桌上遊戲教具「地球守護隊」,共有 3個單元「水汙染」、「空氣汙染」、「土壤汙染」，單元間可互相搭配，增加遊戲難度,也有搭配平板電腦可使用擴增實境(Augmented reality, AR) App(Application)的數位桌遊教學方式,可視教學設備與場域的適性使用。
+                </p>
+            </section>
+
+            <!-- 1.5 單元內容詳情 (折疊樣式 Accordion) -->
+            <section class="content-section accordion-section">
+                <h2 class="section-title">單元內容詳情</h2>
+                
+                <div class="accordion">
+                    <!-- 單元 1：水汙染 -->
+                    <div class="accordion-item">
+                        <input type="checkbox" id="accordion-water" class="accordion-checkbox">
+                        <label for="accordion-water" class="accordion-header">
+                            <span class="header-text">1. 水汙染</span>
+                            <span class="icon">▼</span>
+                        </label>
+                        <div class="accordion-content">
+                            <p>有害物質（如化學物、重金屬、病原體或生活廢水）進入水體（河流、湖泊、海洋、地下水等）中，便會導致水質的惡化，因而使其無法安全使用或影響生態系統。</p>
+                        </div>
+                    </div>
+
+                    <!-- 單元 2：空氣汙染 -->
+                    <div class="accordion-item">
+                        <input type="checkbox" id="accordion-air" class="accordion-checkbox">
+                        <label for="accordion-air" class="accordion-header">
+                            <span class="header-text">2. 空氣汙染</span>
+                            <span class="icon">▼</span>
+                        </label>
+                        <div class="accordion-content">
+                            <p>有害氣體、懸浮微粒或生物因子進入大氣，便會影響空氣的品質，因而對人體健康與環境造成負面影響。</p>
+                        </div>
+                    </div>
+
+                    <!-- 單元 3：土壤汙染 -->
+                    <div class="accordion-item">
+                        <input type="checkbox" id="accordion-soil" class="accordion-checkbox">
+                        <label for="accordion-soil" class="accordion-header">
+                            <span class="header-text">3. 土壤汙染</span>
+                            <span class="icon">▼</span>
+                        </label>
+                        <div class="accordion-content">
+                            <p>有害物質（如重金屬、有機污染物、農藥等）進入土壤，便會破壞土壤品質，因而影響植物生長與食物安全。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 專案成果展示 -->
+            <section class="content-section">
+                <h2 class="section-title">專案成果展示</h2>
+                
+                <!-- 輪播包覆容器 -->
+                <div class="gallery-slider-wrapper">
+                    <button class="gallery-arrow prev-arrow" id="showcasePrev" aria-label="上一張">❮</button>
+                    
+                    <div class="gallery-slider" id="showcaseSlider">
+                        <div class="gallery-slide"><img src="images/showcase_01.jpg" alt="成品展示 1" onclick="openModal(0)"></div>
+                        <div class="gallery-slide"><img src="images/showcase_02.jpg" alt="成品展示 2" onclick="openModal(1)"></div>
+                        <div class="gallery-slide"><img src="images/showcase_03.jpg" alt="成品展示 3" onclick="openModal(2)"></div>
+                        <div class="gallery-slide"><img src="images/showcase_04.jpg" alt="成品展示 4" onclick="openModal(3)"></div>
+                        <div class="gallery-slide"><img src="images/showcase_05.jpg" alt="成品展示 5" onclick="openModal(4)"></div>
+                        <div class="gallery-slide"><img src="images/showcase_06.jpg" alt="成品展示 6" onclick="openModal(5)"></div>
+                    </div>
+
+                    <button class="gallery-arrow next-arrow" id="showcaseNext" aria-label="下一張">❯</button>
+                </div>
+            </section>
+
+            <!-- 3. 現場施測紀錄 -->
+            <section class="content-section">
+                <h2 class="section-title">現場施測紀錄</h2>
+                <div class="gallery-slider-wrapper">
+                    <button class="gallery-arrow prev-arrow" id="galleryPrev" aria-label="上一張">❮</button>
+                    
+                    <div class="gallery-slider" id="gallerySlider">
+                        <div class="gallery-slide"><img src="images/1.png" alt="施測紀錄 1" onclick="openModal(6)"></div>
+                        <div class="gallery-slide"><img src="images/2.png" alt="施測紀錄 2" onclick="openModal(7)"></div>
+                        <div class="gallery-slide"><img src="images/3.png" alt="施測紀錄 3" onclick="openModal(8)"></div>
+                        <div class="gallery-slide"><img src="images/4.png" alt="施測紀錄 4" onclick="openModal(9)"></div>
+                        <div class="gallery-slide"><img src="images/5.png" alt="施測紀錄 5" onclick="openModal(10)"></div>
+                        <div class="gallery-slide"><img src="images/6.png" alt="施測紀錄 6" onclick="openModal(11)"></div>
+                    </div>
+
+                    <button class="gallery-arrow next-arrow" id="galleryNext" aria-label="下一張">❯</button>
+                </div>
+            </section>
+
+            <!-- 4. 教材與學習單資源下載區 -->
+            <section class="content-section">
+                <h2 class="section-title">教材與學習資源下載</h2>
+                <div class="resource-list">
+                    <a href="https://drive.google.com/file/d/1U5EdRB4HGVOJSSn4UBGjuZHt60l4m0PZ/view" target="_blank" class="resource-item">
+                        📄 1. 水污染 學習單.pdf <span>開啟 / 下載</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/11bStEOA3f-uJvfSEYd48BLzfFTfUZT9T/view" target="_blank" class="resource-item">
+                        📄 2. 空氣污染 學習單.pdf <span>開啟 / 下載</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1DrtgkUpNEjEVGUhoLhLx0VQb6e6a_znO/view" target="_blank" class="resource-item">
+                        📄 3. 土壤污染 學習單.pdf <span>開啟 / 下載</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1Wqob12g7ElhbzeYbv_nYqQCMBXrIkZ0f/view" target="_blank" class="resource-item">
+                        📋 4. 滿意度問卷.pdf <span>開啟 / 下載</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- [新增區塊] 4.5. 製作團隊展示 -->
+            <section class="content-section production-team-section">
+                <h2 class="section-title">地球守護隊 製作團隊</h2>
+                <div class="team-cover">
+                    <img src="images/2工作區域-2.png" alt="地球守護隊 製作團隊">
+                </div>
+            </section>
+
+            <!-- 5. APP 下載區 -->
+            <section class="content-section app-download-section">
+                <h2 class="section-title">AR 應用程式下載</h2>
+                <div class="app-badges-container">
+                    
+                    <!-- iOS 下載連結 -->
+                    <a href="https://apps.apple.com/tw/app/%E5%9C%B0%E7%90%83%E5%AE%88%E8%AD%B7%E9%9A%8A/id6751398712" class="app-badge" target="_blank">
+                        <img src="images/250904164037-2.svg" alt="Download on the App Store">
+                        <!-- 新增：明確的 iOS 標題 -->
+                        <span class="badge-title">iOS 版本下載</span>
+                    </a>
+
+                    <!-- Android 下載連結 (預留) -->
+                    <a href="#" class="app-badge" target="_blank">
+                        <img src="images/250904164037-2.svg" alt="Get it on Google Play">
+                        <!-- 新增：明確的 Android 標題 -->
+                        <span class="badge-title">Android 版本下載</span>
+                    </a>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 頁尾 Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <h3>ThinkaBitLab 微想實驗室</h3>
+            <p class="slogan">一點想像，創意就能無限延伸</p>
+            
+            <div class="footer-info">
+                <p>📍 10671 臺北市大安區和平東路 2 段 134 號</p>
+                <p>✉️ thinkabitlab@mail.ntue.edu.tw</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Thinkabit Lab. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 全螢幕大圖彈窗 (Modal Lightbox) -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <button class="modal-arrow modal-prev" onclick="changeModalImg(-1)">❮</button>
+        <img class="modal-content" id="modalImg" alt="大圖檢視">
+        <button class="modal-arrow modal-next" onclick="changeModalImg(1)">❯</button>
+    </div>
+
+    <!-- 輪播控制與大圖檢視 JS -->
+    <script>
+        // 包含專案成果展示(0~5)與現場施測紀錄(6~11)的所有圖片路徑
+        const photos = [
+            "images/showcase_01.jpg", "images/showcase_02.jpg", "images/showcase_03.jpg",
+            "images/showcase_04.jpg", "images/showcase_05.jpg", "images/showcase_06.jpg",
+            "images/1.png", "images/2.png", "images/3.png",
+            "images/4.png", "images/5.png", "images/6.png"
+        ];
+        let currentModalIndex = 0;
+
+        // 1. 「專案成果展示」滑動控制
+        const showcaseSlider = document.getElementById('showcaseSlider');
+        document.getElementById('showcasePrev').addEventListener('click', () => {
+            showcaseSlider.scrollBy({ left: -260, behavior: 'smooth' });
+        });
+        document.getElementById('showcaseNext').addEventListener('click', () => {
+            showcaseSlider.scrollBy({ left: 260, behavior: 'smooth' });
+        });
+
+        // 2. 「現場施測紀錄」滑動控制
+        const gallerySlider = document.getElementById('gallerySlider');
+        document.getElementById('galleryPrev').addEventListener('click', () => {
+            gallerySlider.scrollBy({ left: -260, behavior: 'smooth' });
+        });
+        document.getElementById('galleryNext').addEventListener('click', () => {
+            gallerySlider.scrollBy({ left: 260, behavior: 'smooth' });
+        });
+
+        // 3. 全螢幕大圖 Modal 彈窗控制
+        function openModal(index) {
+            currentModalIndex = index;
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = "flex";
+            modalImg.src = photos[currentModalIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function changeModalImg(direction) {
+            currentModalIndex += direction;
+            if (currentModalIndex < 0) currentModalIndex = photos.length - 1;
+            if (currentModalIndex >= photos.length) currentModalIndex = 0;
+            document.getElementById('modalImg').src = photos[currentModalIndex];
+        }
+
+        // 按 ESC 鍵退出大圖
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
+        // 點擊背景區域也可關閉大圖
+        document.getElementById('imageModal').addEventListener('click', (e) => {
+            if (e.target.id === 'imageModal') closeModal();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+/* =========================================
+   1. 通用基本設定 (Global Styles)
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #152548;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. 頂部導覽列 (Navbar)
+   ========================================= */
+.navbar {
+    width: 100%;
+    background: rgba(247, 247, 247, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-weight: 900;
+    text-decoration: none;
+    color: #152548;
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   3. 專案 Header / Hero 區塊
+   ========================================= */
+.project-hero {
+    text-align: center;
+    padding: 40px 0 20px 0;
+}
+
+.project-tag {
+    display: inline-block;
+    background: #152548;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 15px 0 5px 0;
+    color: #152548;
+}
+
+.project-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.main-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+/* =========================================
+   4. 主要內容卡片區塊 (Content Sections)
+   ========================================= */
+.project-content {
+    padding: 20px 0 40px 0;
+}
+
+/* 通用卡片共用樣式 - 確保所有區塊都有圓角白底陰影 */
+.content-card,
+.content-section,
+.production-team-section {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    border-left: 4px solid #152548;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    color: #152548;
+}
+
+.description-text {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.8;
+}
+
+/* --- YouTube 影片 16:9 響應式容器 --- */
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100.5%;
+    height: 100.5%;
+    border: none;
+    outline: none;
+}
+
+/* =========================================
+   [新增] 4.5. 製作團隊展示區
+   ========================================= */
+.production-team-section {
+    text-align: center; /* 讓標題置中 */
+}
+
+.team-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px; /* 圖片也要圓角 */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05); /* 圖片陰影 */
+    display: block;
+}
+
+/* =========================================
+   5. 單元內容折疊樣式 (Accordion Styles)
+   ========================================= */
+
+/* 折疊區塊容器 */
+.accordion {
+    border-radius: 12px;
+    overflow: hidden; /* 確保內容展開時也有圓角效果 */
+    border: 1px solid #e2e8f0; /* 外框線 */
+}
+
+/* 隱藏 checkbox 本體 */
+.accordion-checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* 單個折疊項目 */
+.accordion-item {
+    border-bottom: 1px solid #eee; /* 項目之間的分割線 */
+}
+
+/* 移除最後一個項目的底部分割線 */
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* 標題區域樣式 */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #f8fafc; /* 項目背景色 */
+    cursor: pointer;
+    font-weight: 600;
+    color: #152548;
+    transition: background 0.3s ease;
+}
+
+/* 滑鼠懸停標題時的效果 */
+.accordion-header:hover {
+    background: #ffffff;
+    color: #007bff; /* 懸停時變為藍色 */
+}
+
+/* 箭頭圖示樣式 */
+.accordion-header .icon {
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: transform 0.3s ease; /* 旋轉動畫 */
+}
+
+/* 懸停標題時箭頭變色 */
+.accordion-header:hover .icon {
+    color: #007bff;
+}
+
+/* 內容區域預設樣式 (高度為 0，隱藏) */
+.accordion-content {
+    max-height: 0; /* 關鍵：預設高度為0實現隱藏 */
+    overflow: hidden; /* 確保隱藏的內容不會顯示出來 */
+    transition: max-height 0.3s ease-out; /* 展開高度的動畫效果 */
+}
+
+/* 開啟狀態的 checkbox 同層排在後面 (~) 的內容區樣式 */
+.accordion-checkbox:checked ~ .accordion-content {
+    max-height: 200px; /* 關鍵：設定一個足夠大的特定高度，內容就會展開。可根據字數手動微調此數值 */
+}
+
+/* 開啟狀態下的內容區內文樣式 */
+.accordion-content p {
+    padding: 20px; /* 內容展開後才顯示的 padding */
+    margin: 0;
+    color: #334155;
+    line-height: 1.8;
+    background: #ffffff;
+}
+
+/* 開啟狀態下的標題背景變色 */
+.accordion-checkbox:checked ~ .accordion-header {
+    background: #ffffff;
+    color: #007bff;
+}
+
+/* 開啟狀態下的箭頭旋轉動畫 */
+.accordion-checkbox:checked ~ .accordion-header .icon {
+    transform: rotate(180deg); /* 箭頭向上旋轉 180 度 */
+    color: #007bff;
+}
+
+/* =========================================
+   6. 通用相片輪播樣式 (適用於成果展示與施測紀錄)
+   ========================================= */
+.gallery-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* 啟用橫向捲動 */
+    scroll-behavior: smooth; /* 平滑捲動效果 */
+    padding: 10px 5px;
+    -webkit-overflow-scrolling: touch; /* 優化行動端捲動手感 */
+}
+
+/* 隱藏原生捲動條 */
+.gallery-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-slide {
+    flex: 0 0 220px; /* 固定每一張相片的寬度 */
+    aspect-ratio: 4 / 3; /* 強制統一寬高比 */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e2e8f0;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 懸停時的浮起效果 */
+.gallery-slide:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保圖片填滿且不變形 */
+    display: block;
+}
+
+/* 輪播左右箭頭通用樣式 */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(21, 37, 72, 0.85);
+    color: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* 箭頭懸停效果 */
+.gallery-arrow:hover {
+    background: #007bff; /* 懸停時變為藍色 */
+}
+
+/* 箭頭位置設定 */
+.prev-arrow { left: -15px; }
+.next-arrow { right: -15px; }
+
+/* =========================================
+   7. 全螢幕大圖彈窗 (Modal Lightbox) 樣式
+   ========================================= */
+.image-modal {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    z-index: 1000; /* 確保在最上層 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* 半透明黑色背景 */
+    backdrop-filter: blur(5px); /* 背景模糊效果 */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    object-fit: contain; /* 確保大圖完整顯示 */
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #007bff;
+}
+
+/* 彈窗內的箭頭樣式 */
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-arrow:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
+
+/* =========================================
+   8. 學習資源與 PDF 下載清單
+   ========================================= */
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #152548;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.resource-item:hover {
+    background: #ffffff;
+    border-color: #007bff;
+    color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.08);
+}
+
+.resource-item span {
+    font-size: 0.85rem;
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* =========================================
+   9. APP 下載區（Badge / QR Code 樣式）
+   ========================================= */
+.app-badges-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* 增加間距，避免標題靠太近 */
+    flex-wrap: wrap; 
+}
+
+.app-badge {
+    display: flex;
+    flex-direction: column; /* 讓圖片與標題上下排列 */
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    /* 移除不必要的背景和邊框，讓視覺焦點集中在圖和字 */
+    background-color: transparent; 
+}
+
+/* 針對 QR Code 圖片的設定 */
+.app-badge img {
+    display: block;
+    width: 140px;  
+    height: 140px; 
+    object-fit: contain; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+    transition: box-shadow 0.2s ease;
+    margin-bottom: 12px; /* 圖片與下方標題的距離 */
+}
+
+/* 新增：QR Code 下方的明確標題樣式 */
+.badge-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #152548; /* 深藍色，與主視覺一致 */
+    letter-spacing: 0.5px;
+    background-color: #f8fafc; /* 給文字一個淡淡的底色像按鈕 */
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 懸停效果 (Hover) */
+.app-badge:hover {
+    transform: translateY(-5px);
+}
+
+.app-badge:hover img {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* 圖片陰影加深 */
+}
+
+.app-badge:hover .badge-title {
+    background-color: #007bff; /* 文字背景變藍色 */
+    color: #ffffff; /* 文字變白色 */
+}
+
+/* =========================================
+   10. 頁尾 (Footer) - 微想實驗室完整資訊
+   ========================================= */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    padding: 40px 0 30px 0;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #152548;
+    margin-bottom: 4px;
+}
+
+.footer-content .slogan {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+/* =========================================
+   11. 響應式微調 (RWD for Mobile)
+   ========================================= */
+@media (max-width: 640px) {
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    /* 手機端卡片樣式微調 */
+    .content-card,
+    .content-section,
+    .production-team-section {
+        padding: 20px;
+    }
+
+    /* 新增的手機端折疊項目標題 padding 調整 */
+    .accordion-header {
+        padding: 14px 16px; /* 縮小 padding */
+    }
+
+    /* 手機端縮小圖片寬度，讓使用者知道可以滑動 */
+    .gallery-slide {
+        flex: 0 0 180px;
+    }
+
+    .resource-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .resource-item span {
+        align-self: flex-end;
+    }
+
+    /* 彈窗箭頭縮小 */
+    .modal-arrow {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+}
